@@ -1,0 +1,15 @@
+{
+  "name": "@phantasy/plugin-adventure",
+  "version": "1.0.0",
+  "description": "adventure plugin for Phantasy",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": { "build": "tsc", "test": "vitest run", "prepublishOnly": "npm run build" },
+  "keywords": ["phantasy", "plugin", "adventure"],
+  "author": "Phantasy",
+  "license": "BUSL-1.1",
+  "repository": { "type": "git", "url": "https://github.com/phantasy-bot/plugin-adventure" },
+  "peerDependencies": { "@phantasy/core": "^1.0.0" },
+  "devDependencies": { "@types/node": "^20.10.0", "typescript": "^5.3.0", "vitest": "^1.0.0" }
+}

@@ -1,50 +1,25 @@
 {
-  "name": "@phantasy/plugin-adventure",
-  "version": "2.0.0",
-  "private": true,
+  "slug": "plugin-adventure",
+  "packageName": "@phantasy/plugin-adventure",
+  "displayName": "Adventure",
   "description": "Interactive adventure runtime plugin for Phantasy companions.",
-  "license": "MIT",
-  "type": "module",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.js"
-    }
-  },
-  "files": [
-    "dist",
-    "README.md",
-    "LICENSE",
-    "SECURITY.md",
-    "phantasy.plugin.json"
-  ],
-  "sideEffects": false,
-  "keywords": [
+  "workspace": "character",
+  "extensionKind": "behavior",
+  "category": "games",
+  "tags": [
     "adventure",
     "story",
     "interactive",
     "companion"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/phantasy-bot/plugin-adventure"
-  },
-  "homepage": "https://github.com/phantasy-bot/plugin-adventure",
-  "scripts": {
-    "build": "tsup",
-    "typecheck": "tsc --noEmit"
-  },
-  "peerDependencies": {
-    "@phantasy/agent": "^2.0.0"
-  },
-  "devDependencies": {
-    "@types/node": "^24.0.0",
-    "tsup": "^8.0.0",
-    "typescript": "^5.9.2"
-  },
+  "permissions": [],
+  "visibility": "public",
+  "repoUrl": "https://github.com/phantasy-bot/plugin-adventure",
+  "sourceOfTruth": "standalone-repo",
+  "syncMode": "scaffold-package",
+  "phase": "scaffold-only",
+  "repoExists": true,
+  "npmPublished": false,
   "phantasy": {
     "displayName": "Adventure",
     "category": "games",
@@ -83,5 +58,6 @@
         }
       }
     }
-  }
+  },
+  "exportedAt": "2026-03-15T15:23:37.073Z"
 }

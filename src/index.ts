@@ -1,27 +1,42 @@
-import { BasePlugin, PluginManifest, PluginTool } from "@phantasy/core";
+import { BasePlugin, type PluginTool } from "@phantasy/agent/plugins";
 
-export class UadventurePlugin extends BasePlugin {
-  readonly name = "adventure";
-  readonly version = "1.0.0";
+export class AdventurePlugin extends BasePlugin {
+  name = "adventure";
+  version = "2.0.0";
+  description = "Interactive adventure runtime plugin for Phantasy companions.";
 
-  getManifest(): PluginManifest {
-    return {
-      name: this.name,
-      version: this.version,
-      description: "adventure plugin for Phantasy",
-      author: "Phantasy",
-      license: "BUSL-1.1",
-      repository: "https://github.com/phantasy-bot/plugin-adventure",
-    };
-  }
+  protected displayName = "Adventure";
+  protected category = "games";
+  protected tags = ["adventure","story","interactive","companion"];
+  protected permissions = [];
+  protected workspace = "character" as const;
+  protected extensionKind = "behavior" as const;
+  protected adminSurface =   {
+    "tabId": "adventure",
+    "label": "Adventure",
+    "section": "character",
+    "workspace": "character",
+    "kind": "generic",
+    "keywords": [
+      "adventure",
+      "story",
+      "interactive",
+      "companion"
+    ]
+  } as const;
+  protected configSchema =   {
+    "type": "object",
+    "properties": {
+      "enabled": {
+        "type": "boolean",
+        "default": true
+      }
+    }
+  };
 
   getTools(): PluginTool[] {
     return [];
   }
-
-  async initialize(): Promise<void> {
-    console.log("[UadventurePlugin] Initialized");
-  }
 }
 
-export default UadventurePlugin;
+export default AdventurePlugin;

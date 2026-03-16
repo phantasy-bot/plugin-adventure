@@ -60,6 +60,7 @@
     "workspace": "character",
     "extensionKind": "behavior",
     "permissions": [],
+    "pluginDependencies": [],
     "platforms": [
       "node"
     ],

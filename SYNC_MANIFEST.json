@@ -13,6 +13,7 @@
     "companion"
   ],
   "permissions": [],
+  "dependencies": [],
   "visibility": "public",
   "repoUrl": "https://github.com/phantasy-bot/plugin-adventure",
   "sourceOfTruth": "standalone-repo",
@@ -128,6 +129,7 @@
     "workspace": "character",
     "extensionKind": "behavior",
     "permissions": [],
+    "pluginDependencies": [],
     "platforms": [
       "node"
     ],
@@ -155,5 +157,5 @@
       }
     }
   },
-  "exportedAt": "2026-03-15T16:12:26.887Z"
+  "exportedAt": "2026-03-16T02:20:40.075Z"
 }

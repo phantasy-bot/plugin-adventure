@@ -1,15 +1,91 @@
 {
   "name": "@phantasy/plugin-adventure",
-  "version": "1.0.0",
-  "description": "adventure plugin for Phantasy",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "version": "2.0.0",
+  "private": false,
+  "description": "Interactive adventure runtime plugin for Phantasy companions.",
+  "license": "MIT",
   "type": "module",
-  "scripts": { "build": "tsc", "test": "vitest run", "prepublishOnly": "npm run build" },
-  "keywords": ["phantasy", "plugin", "adventure"],
-  "author": "Phantasy",
-  "license": "BUSL-1.1",
-  "repository": { "type": "git", "url": "https://github.com/phantasy-bot/plugin-adventure" },
-  "peerDependencies": { "@phantasy/core": "^1.0.0" },
-  "devDependencies": { "@types/node": "^20.10.0", "typescript": "^5.3.0", "vitest": "^1.0.0" }
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "SECURITY.md",
+    "phantasy.plugin.json"
+  ],
+  "sideEffects": false,
+  "keywords": [
+    "adventure",
+    "story",
+    "interactive",
+    "companion"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/phantasy-bot/plugin-adventure"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://github.com/phantasy-bot/plugin-adventure",
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "@phantasy/agent": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.9.2"
+  },
+  "phantasy": {
+    "displayName": "Adventure",
+    "category": "games",
+    "tags": [
+      "adventure",
+      "story",
+      "interactive",
+      "companion"
+    ],
+    "workspace": "character",
+    "extensionKind": "behavior",
+    "permissions": [],
+    "pluginDependencies": [],
+    "platforms": [
+      "node"
+    ],
+    "productionReady": false,
+    "adminSurface": {
+      "tabId": "adventure",
+      "label": "Adventure",
+      "section": "character",
+      "workspace": "character",
+      "kind": "generic",
+      "keywords": [
+        "adventure",
+        "story",
+        "interactive",
+        "companion"
+      ]
+    },
+    "configSchema": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    }
+  }
 }

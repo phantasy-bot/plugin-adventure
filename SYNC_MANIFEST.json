@@ -1,0 +1,165 @@
+{
+  "slug": "plugin-adventure",
+  "packageName": "@phantasy/plugin-adventure",
+  "displayName": "Adventure",
+  "description": "Interactive adventure runtime plugin for Phantasy companions.",
+  "workspace": "character",
+  "extensionKind": "behavior",
+  "category": "games",
+  "tags": [
+    "adventure",
+    "story",
+    "interactive",
+    "companion"
+  ],
+  "permissions": [],
+  "dependencies": [],
+  "visibility": "public",
+  "repoUrl": "https://github.com/phantasy-bot/plugin-adventure",
+  "sourceOfTruth": "standalone-repo",
+  "syncMode": "source-extract",
+  "phase": "source-extracted",
+  "repoExists": true,
+  "npmPublished": false,
+  "sourceExtract": {
+    "files": [
+      {
+        "sourcePath": "src/plugins/visual-novel/index.ts",
+        "targetPath": "src/index.ts",
+        "replacements": [
+          {
+            "from": "export { AdventurePlugin } from \"@/plugins/visual-novel/adventure-plugin\";",
+            "to": "export { AdventurePlugin } from \"./adventure-plugin\";"
+          },
+          {
+            "from": "export { default } from \"@/plugins/visual-novel/adventure-plugin\";",
+            "to": "export { default } from \"./adventure-plugin\";"
+          }
+        ]
+      },
+      {
+        "sourcePath": "src/plugins/visual-novel/adventure-plugin.ts",
+        "targetPath": "src/adventure-plugin.ts"
+      },
+      {
+        "sourcePath": "src/plugins/visual-novel/types.ts",
+        "targetPath": "src/types.ts"
+      },
+      {
+        "sourcePath": "src/plugins/visual-novel/narrative-engine.ts",
+        "targetPath": "src/narrative-engine.ts"
+      },
+      {
+        "sourcePath": "src/plugins/visual-novel/world-builder.ts",
+        "targetPath": "src/world-builder.ts"
+      },
+      {
+        "sourcePath": "src/plugins/visual-novel/combat-system.ts",
+        "targetPath": "src/combat-system.ts"
+      },
+      {
+        "sourcePath": "src/plugins/visual-novel/game-engine.ts",
+        "targetPath": "src/game-engine.ts"
+      }
+    ],
+    "replacements": [
+      {
+        "from": "import {\n  BasePlugin,\n  PluginContext,\n  PluginResponse,\n  PluginTool,\n  PluginConfig,\n  PluginManifest,\n} from \"@/plugins/base-plugin\";",
+        "to": "import {\n  BasePlugin,\n  PluginContext,\n  PluginResponse,\n  PluginTool,\n  PluginConfig,\n  PluginManifest,\n} from \"@phantasy/agent/plugins\";"
+      },
+      {
+        "from": "import type { PluginConfig } from \"@/plugins/base-plugin\";",
+        "to": "import type { PluginConfig } from \"@phantasy/agent/plugins\";"
+      },
+      {
+        "from": "import type { PluginContext } from \"@/plugins/base-plugin\";",
+        "to": "import type { PluginContext } from \"@phantasy/agent/plugins\";"
+      },
+      {
+        "from": "\"@/plugin-runtime/adventure\"",
+        "to": "\"@phantasy/agent/plugin-runtime\""
+      },
+      {
+        "from": "'@/plugin-runtime/adventure'",
+        "to": "\"@phantasy/agent/plugin-runtime\""
+      },
+      {
+        "from": "import ProviderImageGenerationService from \"@/plugins/image/provider-image-generation-service\";",
+        "to": "import { ProviderImageGenerationService } from \"@phantasy/agent/plugin-runtime\";"
+      },
+      {
+        "from": "import type ProviderImageGenerationService from \"@/plugins/image/provider-image-generation-service\";",
+        "to": "import type { ProviderImageGenerationService } from \"@phantasy/agent/plugin-runtime\";"
+      },
+      {
+        "from": "import type { ImageStylePreset } from \"@/types/agent-config\";",
+        "to": "import type { ImageStylePreset } from \"@phantasy/agent/types\";"
+      },
+      {
+        "from": "import { kvService } from \"@/storage/kv/service\";",
+        "to": "import { kvService } from \"@phantasy/agent/plugin-runtime\";"
+      },
+      {
+        "from": "import { createMediaStorageService, MediaStorageService } from '@/services/media/media-storage-service';",
+        "to": "import { createMediaStorageService, MediaStorageService } from \"@phantasy/agent/plugin-runtime\";"
+      },
+      {
+        "from": "import type { MediaStorageService } from '@/services/media/media-storage-service';",
+        "to": "import type { MediaStorageService } from \"@phantasy/agent/plugin-runtime\";"
+      },
+      {
+        "from": "import { providerService } from '@/services/ai/provider-service';",
+        "to": "import { providerService } from \"@phantasy/agent/plugin-runtime\";"
+      },
+      {
+        "from": "import {\n  randomChance,\n  randomChoice,\n  randomFloat,\n  shuffleCopy,\n} from \"@/utils/random\";",
+        "to": "import {\n  randomChance,\n  randomChoice,\n  randomFloat,\n  shuffleCopy,\n} from \"@phantasy/agent/plugin-runtime\";"
+      },
+      {
+        "from": "import { createRuntimeId } from \"@/utils/runtime-id\";",
+        "to": "import { createRuntimeId } from \"@phantasy/agent/plugin-runtime\";"
+      }
+    ]
+  },
+  "phantasy": {
+    "displayName": "Adventure",
+    "category": "games",
+    "tags": [
+      "adventure",
+      "story",
+      "interactive",
+      "companion"
+    ],
+    "workspace": "character",
+    "extensionKind": "behavior",
+    "permissions": [],
+    "pluginDependencies": [],
+    "platforms": [
+      "node"
+    ],
+    "productionReady": false,
+    "adminSurface": {
+      "tabId": "adventure",
+      "label": "Adventure",
+      "section": "character",
+      "workspace": "character",
+      "kind": "generic",
+      "keywords": [
+        "adventure",
+        "story",
+        "interactive",
+        "companion"
+      ]
+    },
+    "configSchema": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    }
+  },
+  "exportedAt": "2026-03-21T22:09:30.311Z"
+}

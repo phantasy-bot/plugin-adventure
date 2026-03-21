@@ -1,0 +1,21 @@
+{
+  "name": "@phantasy/plugin-adventure",
+  "version": "2.0.1",
+  "description": "Interactive adventure runtime plugin for Phantasy companions.",
+  "displayName": "Adventure",
+  "workspace": "character",
+  "extensionKind": "behavior",
+  "adminSurface": {
+    "tabId": "adventure",
+    "label": "Adventure",
+    "section": "character",
+    "workspace": "character",
+    "kind": "generic",
+    "keywords": [
+      "adventure",
+      "story",
+      "interactive",
+      "companion"
+    ]
+  }
+}
